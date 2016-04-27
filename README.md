@@ -147,6 +147,8 @@ A view starts with a list of IP and MAC addresses of real hosts that will be acc
 - The "MaxHosts" variable specifies the maximum address number of a deceptive host IP address that will be assigned to a host in a virtual network view. For example MaxHosts=255 would result in a maximum IP address of "10.0.48.255" in the given example (255 is the maximum value for this variable). 
 - The "Strategy" value specifies the strategy how real visible hosts are distributed over the topology of a virtual network view, the options are random, crowded or even distribution between subnets.
 <br />
+
+
 After a network view file is configured the system can be started as follows:
 
 ### Start the SDN Controller ###
@@ -160,14 +162,19 @@ Upon startup the SDN controller will prompt the user to enter the path to the ne
 
 To begin the Mininet network emulator has to be started. As an example the command "sudo mn --topo=single,12 --mac --controller=remote" Mininet starts emulating a network with a single SDN switch and 12 nodes. The controller is specified as remote and will automatically connect with the POX NCDS SDN controller. The option --mac will set the MAC addresses of nodes in increasing order starting at "00:00:00:00:00:01". By default the IP address of nodes in Mininet is starting at "10.0.0.1" and increasing.
 <br />
+
 After Mininet is started and connected to the SDN NCDS controller, the controller will automatically start reading the network view file and loading the appropriate SDN flow rules into the SDN switch of the subnet where the target node is located.
 <br />
+
 In a Mininet-Environment, the deception server has to be started at the node which is located on port 1 of the SDN switch (this option can be changes in the source code). The deception server has to be started with root privileges. To start the deception server in the terminal of the node located at port 1 type for example: "/home/mininet/DeceptionServer# python main.py"
 Upon startup the deception server will prompt the user to enter the path to the network view file, the same .nv file as for entered for the SDN controller has to be used.
 <br />
+
 After the server is running a terminal at the target node, e.g. node that is located on port 2 of the SDN switch, has to request a DHCP lease to be able to connect to the network. This should be done by executing the following commands on the node located on port 2: "dhclient -r" (will release the current DHCP lease), "dhclient h2-eth0" (will request a new DHCP lease from the deception server at the specified network interface (here "h2-eth0").
 <br />
+
 Now the network will appear to the target node as specified in the network view file. This can be evaluated by scanning the network with a tool like NMAP (or ZenMAP to visualize the virtual topology). To map a virtual network, as specified in our example view file "nv.nv" ZenMAP can be started with the following command: "nmap -T4 -A -v --traceroute 10.0.1.0/24 10.0.2.0/24 10.0.3.0/24"
 <br />
+
 The target node is able to connect to the specified *Nodes* in the same way as in a normal network.
 
