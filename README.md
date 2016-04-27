@@ -25,7 +25,7 @@ Target: The node in a network that has the current virtual network view applied 
 Target,*Shortname,DeceptiveIP,RealMAC,PortOnSDNSwitch,Visibility (always v for visible in case of the target)*
 
 Example:
-Target,h1,10.0.3.220,00:00:00:00:00:02,2
+Target,h1,10.0.3.220,00:00:00:00:00:02,2,v
 
 Only one target node can exists in a view file.
 
