@@ -18,7 +18,7 @@ Network view files (e.g. nv.nv) can be written manually or auto-generated with o
 A network view file (*.nv) contains the information ncessary to simulate a virtual network view.
 
 The following values are stored in a network view file. Each line in a *.nv file starts with a component name.
-A list of components for a virtual network view are: *Target, Server, Node, Honeypot, Honeyrouter, Route, Gateyway*
+A list of components for a virtual network view are:*Target, Server, Node, Honeypot, Honeyrouter, Route, Gateyway*
 We provide a few examples of virtual network view files in the folder *ViewFileExamples*
 
 The components are explained in detail as follows:
