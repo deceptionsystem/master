@@ -119,8 +119,8 @@ class ncds_controller(object):
       connection.send(of.ofp_stats_request(body=of.ofp_port_stats_request()))
 
 def launch (transparent=False):
-  #nvFile = str(raw_input("Enter view file:\n"))
-  nvFile = "/home/stefan/Desktop/nv.nv"
+  nvFile = str(raw_input("Enter view file:\n"))
+  #nvFile = "/home/stefan/Desktop/nv.nv"
   nv_store.setNVPath(nvFile)
   core.registerNew(ncds_controller, str_to_bool(transparent))
   log.info("NCDS SDN Controller running...")
