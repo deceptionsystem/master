@@ -3,6 +3,9 @@
 In case of any questions, bugs, comments or concerns please contact us at: ncds.deception@gmail.com
 NCDS can be used under the terms of the Creative Commons (CC0) license.
 
+Please note that the implementation details of this network cyber deception system are discussed in the research paper "Cyber Deception: Virtual Networks to Defend Reconnaissance".
+The released implementation is a research prototype that gives a proof of concept of the discussed deception techniques. This implementation is not at the state to be released as a product which can be deployed in a production network.
+
 ### Before you start ###
 
 Please make sure that you have Python, Scapy (version 2.3.2), POX and Mininet installed on your Linux system.
