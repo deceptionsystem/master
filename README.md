@@ -1,9 +1,9 @@
-# NCDS - Network Cyber Deception System #
+# RDS - Reconnaissance Deception System #
 
-In case of any questions, bugs, comments or concerns please contact us at: ncds.deception@gmail.com
+In case of any questions, bugs, comments or concerns please contact us at: deception.system@gmail.com
 NCDS can be used under the terms of the Creative Commons (CC0) license.
 
-Please note that the implementation details of this network cyber deception system are discussed in the research paper "Cyber Deception: Virtual Networks to Defend Reconnaissance".
+Please note that the implementation details of this reconnaissance deception system are discussed in the research paper "Cyber Deception: Virtual Networks to Defend Insider Reconnaissance".
 The released implementation is a research prototype that gives a proof of concept of the discussed deception techniques. This implementation is not at the state to be released as a product which can be deployed in a production network.
 
 ### Before you start ###
@@ -158,15 +158,15 @@ After a network view file is configured the system can be started as follows:
 
 Copy the SDN Controller directory into the POX folder (e.g. /home/mininet/pox/pox/SDNController_ncds)
 With the following command the SDN controller has to be started on a terminal: "./pox.py log.level --DEBUG SDNController_ncds.Controller"
-Here "SDNController_ncds" is the directory of the NCDS SDN controller, "Controller" is the python file of the NCDS SDN controller. 
+Here "SDNController_ncds" is the directory of the RDS SDN controller, "Controller" is the python file of the RDS SDN controller. 
 Upon startup the SDN controller will prompt the user to enter the path to the network view file, the same .nv file as for entered for the deception server has to be used.
 
 ### Start the deception server ###
 
-To begin the Mininet network emulator has to be started. As an example the command "sudo mn --topo=single,12 --mac --controller=remote" Mininet starts emulating a network with a single SDN switch and 12 nodes. The controller is specified as remote and will automatically connect with the POX NCDS SDN controller. The option --mac will set the MAC addresses of nodes in increasing order starting at "00:00:00:00:00:01". By default the IP address of nodes in Mininet is starting at "10.0.0.1" and increasing.
+To begin the Mininet network emulator has to be started. As an example the command "sudo mn --topo=single,12 --mac --controller=remote" Mininet starts emulating a network with a single SDN switch and 12 nodes. The controller is specified as remote and will automatically connect with the POX RDS SDN controller. The option --mac will set the MAC addresses of nodes in increasing order starting at "00:00:00:00:00:01". By default the IP address of nodes in Mininet is starting at "10.0.0.1" and increasing.
 <br />
 
-After Mininet is started and connected to the SDN NCDS controller, the controller will automatically start reading the network view file and loading the appropriate SDN flow rules into the SDN switch of the subnet where the target node is located.
+After Mininet is started and connected to the SDN RDS controller, the controller will automatically start reading the network view file and loading the appropriate SDN flow rules into the SDN switch of the subnet where the target node is located.
 <br />
 
 In a Mininet-Environment, the deception server has to be started at the node which is located on port 1 of the SDN switch (this option can be changes in the source code). The deception server has to be started with root privileges. To start the deception server in the terminal of the node located at port 1 type for example: "/home/mininet/DeceptionServer# python main.py"
