@@ -181,3 +181,6 @@ Now the network will appear to the target node as specified in the network view 
 
 The target node is able to connect to the specified *Nodes* in the same way as in a normal network.
 
+### Network consistency ###
+
+Simulating the physical network characteristics in a virtual view are not automatically activated on system startup. To include this module, queueing disciplines have to be setup on every host. We provide sample scripts in the folder /NetworkConsistency
