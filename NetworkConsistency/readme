@@ -1,1 +1,1 @@
-This folder contains scripts to show how a queueing discipline for simulating host delay has to be setup. It also contains a script to adjust the system settings so that a Linux host accepts VLAN tagged packets.
+This folder contains scripts to show how a queueing discipline for simulating host delay has to be setup (delay_script.sh). It also contains a script to adjust the system settings so that a Linux host accepts VLAN tagged packets (vlan.sh).
